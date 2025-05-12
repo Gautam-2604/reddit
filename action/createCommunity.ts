@@ -18,8 +18,11 @@ export async function createCommunity(
   description?: string
 ) {
   try {
+    console.log("Ghus gya");
+    
     const user = await getUser();
-
+    console.log(user, "User from createCommunity");
+    
     if ("error" in user) {
       return { error: user.error };
     }
@@ -41,9 +44,12 @@ export async function createCommunity(
       slug,
       description
     );
-
+    console.log(result, "Result from createSubreddit");
+    
     return result;
   } catch (error) {
+    console.log("Direct idhar");
+    
     console.error("Error in createCommunity:", error);
     return { error: "Failed to create community" };
   }

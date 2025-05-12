@@ -68,6 +68,8 @@ export async function getUser(): Promise<UserResult | { error: string }> {
         loggedInUser.emailAddresses[0].emailAddress,
       imageUrl: loggedInUser.imageUrl,
     });
+    console.log(newUser, "New user created");
+    
 
     console.log(`New user created with ID: ${newUser._id}`);
     const user = {

@@ -11,6 +11,8 @@ export async function addUser({
   email: string;
   imageUrl: string;
 }) {
+  console.log("Proof we entered addUser");
+  
   const user = await adminClient.createIfNotExists({
     _id: id,
     _type: "user",
@@ -19,6 +21,8 @@ export async function addUser({
     imageUrl,
     joinedAt: new Date().toISOString(),
   });
+  console.log(user);
+  
 
   return user;
 }

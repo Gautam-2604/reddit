@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/components/header/Header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import Header from "@/components/header/Header";
 import { SanityLive } from "@/sanity/lib/live";
 
 const geistSans = Geist({
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Reddish",
-  description: "Reddit but better",
+  description: "Reddish",
 };
 
 export default function RootLayout({
@@ -35,8 +35,10 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
+
             <SidebarInset>
               <Header />
+
               <div className="flex flex-col">{children}</div>
             </SidebarInset>
           </SidebarProvider>

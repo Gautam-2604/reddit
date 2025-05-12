@@ -113,7 +113,8 @@ function CreateCommunityButton() {
           fileName = imageFile.name;
           fileType = imageFile.type;
         }
-
+        console.log("I am here");
+        
         const result = await createCommunity(
           name.trim(),
           imageBase64,
@@ -122,6 +123,8 @@ function CreateCommunityButton() {
           slug.trim(),
           description.trim() || undefined
         );
+        console.log(result, "Result");
+        
 
         console.log("Community created:", result);
 
